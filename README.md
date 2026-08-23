@@ -2,10 +2,8 @@
 
 A minimalist, mobile-first, voice-activated smart shopping list web application built with **React 19**, **Vite**, **TypeScript**, **Tailwind CSS v4**, and **Firebase SDK v12**.
 
-🌐 **Live Vercel Application**: [https://voice-shopping-assistant-tau-mocha.vercel.app](https://voice-shopping-assistant-tau-mocha.vercel.app)
+🌐 **Live Vercel Application**: [https://voice-shopping-assistant-tau-mocha.vercel.app](https://voice-shopping-assistant-tau-mocha.vercel.app)  
 🌐 **GitHub Pages Mirror**: [https://aarushi014.github.io/voice-shopping-assistant/](https://aarushi014.github.io/voice-shopping-assistant/)
-
-
 
 Designed for one-handed phone use, this assistant uses browser-native speech recognition paired with a lightweight NLP command parser to turn natural spoken phrases into structured shopping list actions, catalog searches, and intelligent recommendations.
 
@@ -63,7 +61,7 @@ Ensure you have **Node.js** (v18.0.0 or higher) and `npm` installed.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/voice-shopping-assistant.git
+   git clone https://github.com/aarushi014/voice-shopping-assistant.git
    cd voice-shopping-assistant
    ```
 
@@ -100,38 +98,76 @@ Ensure you have **Node.js** (v18.0.0 or higher) and `npm` installed.
 
 ---
 
-## 🎤 How to Test Voice Commands
+## 🎤 How to Test Voice Commands Across All Languages
 
-Tap the **Center Microphone Button** or use the text input fallback box to test the following phrasings:
+Select your preferred language in the top-right header selector dropdown (or test using the text fallback box). Below is the comprehensive command reference for all 4 supported languages:
 
-### English (`en-US`)
-- **Add Items**:
-  - *"Add 2 bottles of water"*
-  - *"I need 5 apples"*
-  - *"Buy almond milk"*
-- **Voice Search Catalog**:
-  - *"Find me organic apples"* (Filters organic apples under $5)
-  - *"Find toothpaste under $5"* (Filters toothpaste under $5, excluding Sensodyne)
-- **Update Quantities**:
-  - *"Change apples to 8"*
-  - *"Set water to 4"*
-- **Remove Items**:
-  - *"Remove milk from my list"*
+### 1. 🇺🇸 English (`en-US`)
 
-### Hindi (`hi-IN`)
-- *"दूध जोड़ें"* (Add milk)
-- *"२ पानी की बोतल जोड़ें"* (Add 2 bottles of water)
-- *"सेब हटाएं"* (Remove apples)
+| Intent / Action | Example Spoken Phrase | Expected Result |
+| :--- | :--- | :--- |
+| **Add Item** | *"Add 2 bottles of water"* | Adds *bottled water* (Qty: 2) under Beverages |
+| **Add Item** | *"I need 5 apples"* | Adds *fresh apples* (Qty: 5) under Produce |
+| **Add Item** | *"Buy almond milk"* | Adds *almond milk* (Qty: 1) under Dairy |
+| **Remove Item** | *"Remove milk from my list"* | Removes milk from shopping list |
+| **Update Qty** | *"Change apples to 8"* | Updates quantity of apples to 8 |
+| **Update Qty** | *"Set water to 4"* | Updates quantity of water to 4 |
+| **Voice Search** | *"Find me organic apples"* | Filters catalog for organic apples |
+| **Voice Search** | *"Find toothpaste under $5"* | Filters catalog for toothpaste <= $5 |
 
-### Spanish (`es-ES`)
-- *"Añadir 2 botellas de agua"* (Add 2 bottles of water)
-- *"Comprar leche"* (Buy milk)
-- *"Eliminar manzanas"* (Remove apples)
+---
 
-### French (`fr-FR`)
-- *"Ajouter du lait"* (Add milk)
-- *"Acheter 3 pommes"* (Buy 3 apples)
-- *"Supprimer l'eau"* (Remove water)
+### 2. 🇮🇳 Hindi (`hi-IN` / हिन्दी)
+
+Keywords supported: `जोड़ें`, `जोड़ो`, `चाहिए`, `खरीदो`, `लाओ`, `ऐड करो`, `हटाओ`, `हटाएं`, `निकालो`, `डिलीट करो`, `ढूंढो`, `खोजें`, `बदलो`.
+
+| Intent / Action | Example Spoken Phrase | Expected Result |
+| :--- | :--- | :--- |
+| **Add Item** | *"दूध जोड़ें"* | Adds *whole milk* (Qty: 1) under Dairy |
+| **Add Item** | *"दो पानी की बोतल जोड़ें"* | Adds *water bottle* (Qty: 2) under Beverages |
+| **Add Item** | *"मुझे ५ सेब चाहिए"* | Adds *fresh apples* (Qty: 5) under Produce |
+| **Add Item** | *"अंडे खरीदो"* | Adds *fresh eggs* (Qty: 1) under Dairy |
+| **Add Item** | *"ब्रेड लाओ"* | Adds *whole wheat bread* under Bakery |
+| **Remove Item** | *"दूध हटाओ"* | Removes milk from shopping list |
+| **Remove Item** | *"सेब हटाएं"* | Removes apples from shopping list |
+| **Remove Item** | *"पानी निकालो"* | Removes water from shopping list |
+| **Update Qty** | *"सेब ८ बदलो"* / *"सेब ८ कर दो"* | Updates quantity of apples to 8 |
+| **Voice Search** | *"ऑर्गेनिक सेब ढूंढो"* | Searches catalog for organic apples |
+| **Voice Search** | *"टूथपेस्ट खोजें"* | Searches catalog for toothpaste |
+
+---
+
+### 3. 🇪🇸 Spanish (`es-ES` / Español)
+
+Keywords supported: `añadir`, `agregar`, `necesito`, `comprar`, `traer`, `eliminar`, `quitar`, `borrar`, `buscar`, `encontrar`, `cambiar`.
+
+| Intent / Action | Example Spoken Phrase | Expected Result |
+| :--- | :--- | :--- |
+| **Add Item** | *"Añadir 2 botellas de agua"* | Adds *bottled water* (Qty: 2) under Beverages |
+| **Add Item** | *"Necesito 5 manzanas"* | Adds *fresh apples* (Qty: 5) under Produce |
+| **Add Item** | *"Comprar leche"* | Adds *whole milk* (Qty: 1) under Dairy |
+| **Remove Item** | *"Eliminar leche de mi lista"* | Removes milk from shopping list |
+| **Remove Item** | *"Quitar manzanas"* | Removes apples from shopping list |
+| **Update Qty** | *"Cambiar manzanas a 8"* | Updates quantity of apples to 8 |
+| **Voice Search** | *"Buscar manzanas orgánicas"* | Searches catalog for organic apples |
+| **Voice Search** | *"Encontrar pasta de dientes"* | Searches catalog for toothpaste |
+
+---
+
+### 4. 🇫🇷 French (`fr-FR` / Français)
+
+Keywords supported: `ajouter`, `j'ai besoin de`, `acheter`, `mettre`, `supprimer`, `enlever`, `retirer`, `chercher`, `trouver`, `changer`.
+
+| Intent / Action | Example Spoken Phrase | Expected Result |
+| :--- | :--- | :--- |
+| **Add Item** | *"Ajouter 2 bouteilles d'eau"* | Adds *bottled water* (Qty: 2) under Beverages |
+| **Add Item** | *"J'ai besoin de 5 pommes"* | Adds *fresh apples* (Qty: 5) under Produce |
+| **Add Item** | *"Acheter du lait"* | Adds *whole milk* (Qty: 1) under Dairy |
+| **Remove Item** | *"Supprimer le lait"* | Removes milk from shopping list |
+| **Remove Item** | *"Enlever les pommes"* | Removes apples from shopping list |
+| **Update Qty** | *"Changer les pommes à 8"* | Updates quantity of apples to 8 |
+| **Voice Search** | *"Chercher des pommes biologiques"* | Searches catalog for organic apples |
+| **Voice Search** | *"Trouver du dentifrice"* | Searches catalog for toothpaste |
 
 ---
 
