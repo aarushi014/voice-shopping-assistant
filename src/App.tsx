@@ -101,18 +101,25 @@ export default function App() {
   useEffect(() => {
     if (!userId) return;
 
+
+
+    let isInitialLoad = true;
     setSyncStatus('syncing');
     const unsubscribe = subscribeShoppingList(
       userId,
       (cloudItems) => {
-        if (cloudItems.length > 0) {
-          setItems(cloudItems);
-        } else {
-          INITIAL_DEMO_ITEMS.forEach((item) => {
-            saveShoppingItemToFirestore(userId, item);
-          });
-          setItems(INITIAL_DEMO_ITEMS);
+        if (isInitialLoad) {
+          isInitialLoad = false;
+          if (cloudItems.length === 0) {
+            INITIAL_DEMO_ITEMS.forEach((item) => {
+              saveShoppingItemToFirestore(userId, item);
+            });
+            setItems(INITIAL_DEMO_ITEMS);
+            setSyncStatus('synced');
+            return;
+          }
         }
+        setItems(cloudItems);
         setSyncStatus('synced');
       },
       () => {
@@ -122,6 +129,7 @@ export default function App() {
 
     return () => unsubscribe();
   }, [userId]);
+
 
   // 4. Compute Dynamic Suggestions
   useEffect(() => {
@@ -360,16 +368,19 @@ export default function App() {
   const handleClearAll = () => {
     if (window.confirm('Clear all items from your shopping list?')) {
       setSyncStatus('syncing');
-      items.forEach((item) => {
-        if (userId) {
-          deleteShoppingItemFromFirestore(userId, item.id);
-        }
-      });
+      const itemsToDelete = [...items];
       setItems([]);
-      setSyncStatus('synced');
+      if (userId) {
+        Promise.all(itemsToDelete.map((item) => deleteShoppingItemFromFirestore(userId, item.id))).finally(() => {
+          setSyncStatus('synced');
+        });
+      } else {
+        setSyncStatus('synced');
+      }
       showNotification('Cleared list ✓');
     }
   };
+
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-start px-3 py-4 sm:p-6 font-sans select-none">
