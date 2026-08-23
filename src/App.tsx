@@ -148,47 +148,57 @@ export default function App() {
     const normTarget = itemName.toLowerCase().trim();
     if (!normTarget) return;
 
-    setSyncStatus('syncing');
-    const existingIndex = items.findIndex(
-      (i) => i.name.toLowerCase().includes(normTarget) || normTarget.includes(i.name.toLowerCase())
-    );
+    const addQty = Math.max(1, quantity);
 
-    if (existingIndex >= 0) {
-      const existing = items[existingIndex];
-      const updatedItem: ShoppingItem = {
-        ...existing,
-        quantity: existing.quantity + quantity,
-      };
-      setItems((prev) => {
-        const next = [...prev];
+    setSyncStatus('syncing');
+    setItems((prevItems) => {
+      // Find exact or clean item name match
+      const existingIndex = prevItems.findIndex(
+        (i) =>
+          i.name.toLowerCase().trim() === normTarget ||
+          i.name.toLowerCase().trim() === `${normTarget} bottle` ||
+          normTarget === `${i.name.toLowerCase().trim()} bottle`
+      );
+
+      if (existingIndex >= 0) {
+        const existing = prevItems[existingIndex];
+        const updatedItem: ShoppingItem = {
+          ...existing,
+          quantity: existing.quantity + addQty,
+        };
+        const next = [...prevItems];
         next[existingIndex] = updatedItem;
+
+        if (userId) {
+          saveShoppingItemToFirestore(userId, updatedItem).finally(() => setSyncStatus('synced'));
+        } else {
+          setSyncStatus('synced');
+        }
+        showNotification(`Updated "${updatedItem.name}" to ${updatedItem.quantity} ✓`);
         return next;
-      });
-      if (userId) {
-        saveShoppingItemToFirestore(userId, updatedItem).finally(() => setSyncStatus('synced'));
       } else {
-        setSyncStatus('synced');
+        const category = categoryOverride || categorizeItem(itemName);
+        const newItem: ShoppingItem = {
+          id: Date.now().toString() + Math.random().toString().slice(2, 6),
+          name: itemName,
+          quantity: addQty,
+          category,
+          addedAt: new Date().toISOString(),
+          purchased: false,
+        };
+        const next = [newItem, ...prevItems];
+
+        if (userId) {
+          saveShoppingItemToFirestore(userId, newItem).finally(() => setSyncStatus('synced'));
+        } else {
+          setSyncStatus('synced');
+        }
+        showNotification(`Added ${newItem.name} (1) ✓`);
+        return next;
       }
-      showNotification(`Updated "${updatedItem.name}" to ${updatedItem.quantity} ✓`);
-    } else {
-      const category = categoryOverride || categorizeItem(itemName);
-      const newItem: ShoppingItem = {
-        id: Date.now().toString() + Math.random().toString().slice(2, 6),
-        name: itemName,
-        quantity,
-        category,
-        addedAt: new Date().toISOString(),
-        purchased: false,
-      };
-      setItems((prev) => [newItem, ...prev]);
-      if (userId) {
-        saveShoppingItemToFirestore(userId, newItem).finally(() => setSyncStatus('synced'));
-      } else {
-        setSyncStatus('synced');
-      }
-      showNotification(`Added ${newItem.name} ✓`);
-    }
+    });
   };
+
 
   // Execute Voice Command on Shopping List State & Firestore
   const handleVoiceCommand = (command: VoiceCommand) => {

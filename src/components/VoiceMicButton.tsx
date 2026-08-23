@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
 import { parseVoiceCommand } from '../services/commandParser';
 import type { SupportedLanguage } from '../services/i18n/commandKeywords';
@@ -31,25 +31,37 @@ export const VoiceMicButton: React.FC<VoiceMicButtonProps> = ({
   });
 
   const [parsedCommand, setParsedCommand] = useState<VoiceCommand | null>(null);
+  const processedTranscriptRef = useRef<string>('');
+
   const activeText = (transcript + ' ' + interimTranscript).trim();
 
-  // Parse voice text in real time as transcript updates
+  // 1. Live Visual Preview ONLY (Updates UI badge in real time as user speaks)
   useEffect(() => {
     if (activeText) {
       const parsed = parseVoiceCommand(activeText, lang);
       setParsedCommand(parsed);
-      if (onCommandParsed) {
-        onCommandParsed(parsed);
-      }
     } else {
       setParsedCommand(null);
     }
-  }, [activeText, lang, onCommandParsed]);
+  }, [activeText, lang]);
+
+  // 2. Execute Command ONCE when final transcript arrives or recording stops
+  useEffect(() => {
+    const finalClean = transcript.trim();
+    if (finalClean && finalClean !== processedTranscriptRef.current) {
+      processedTranscriptRef.current = finalClean;
+      const parsed = parseVoiceCommand(finalClean, lang);
+      if (onCommandParsed) {
+        onCommandParsed(parsed);
+      }
+    }
+  }, [transcript, lang, onCommandParsed]);
 
   const handleMicClick = () => {
     if (isListening) {
       stopListening();
     } else {
+      processedTranscriptRef.current = '';
       resetTranscript();
       startListening(lang);
     }
@@ -179,7 +191,10 @@ export const VoiceMicButton: React.FC<VoiceMicButtonProps> = ({
           {transcript && (
             <button
               type="button"
-              onClick={resetTranscript}
+              onClick={() => {
+                processedTranscriptRef.current = '';
+                resetTranscript();
+              }}
               className="text-xs text-slate-400 hover:text-slate-200 transition-colors min-h-[36px] px-2 cursor-pointer"
             >
               Clear
