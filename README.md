@@ -3,7 +3,9 @@
 A minimalist, mobile-first, voice-activated smart shopping list web application built with **React 19**, **Vite**, **TypeScript**, **Tailwind CSS v4**, and **Firebase SDK v12**.
 
 🌐 **Live Vercel Application**: [https://voice-shopping-assistant-tau-mocha.vercel.app](https://voice-shopping-assistant-tau-mocha.vercel.app)  
-🌐 **GitHub Pages Mirror**: [https://aarushi014.github.io/voice-shopping-assistant/](https://aarushi014.github.io/voice-shopping-assistant/)
+🌐 **GitHub Pages Mirror**: [https://aarushi014.github.io/voice-shopping-assistant/](https://aarushi014.github.io/voice-shopping-assistant/)  
+🐙 **GitHub Repository**: [https://github.com/aarushi014/voice-shopping-assistant](https://github.com/aarushi014/voice-shopping-assistant)
+
 
 Designed for one-handed phone use, this assistant uses browser-native speech recognition paired with a lightweight NLP command parser to turn natural spoken phrases into structured shopping list actions, catalog searches, and intelligent recommendations.
 
