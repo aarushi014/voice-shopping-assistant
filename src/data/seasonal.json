@@ -1,0 +1,22 @@
+{
+  "seasons": {
+    "0": [{ "name": "Hot Chocolate", "category": "Beverages" }, { "name": "Oranges", "category": "Produce" }],
+    "1": [{ "name": "Strawberries", "category": "Produce" }, { "name": "Soup Mix", "category": "Household" }],
+    "2": [{ "name": "Spinach", "category": "Produce" }, { "name": "Spring Water", "category": "Beverages" }],
+    "3": [{ "name": "Asparagus", "category": "Produce" }, { "name": "Fresh Berries", "category": "Produce" }],
+    "4": [{ "name": "Mangoes", "category": "Produce" }, { "name": "Lemonade", "category": "Beverages" }],
+    "5": [{ "name": "Watermelon", "category": "Produce" }, { "name": "Iced Coffee", "category": "Beverages" }],
+    "6": [{ "name": "Fresh Peaches", "category": "Produce" }, { "name": "Grill Charcoal", "category": "Household" }],
+    "7": [
+      { "name": "Fresh Mangoes", "category": "Produce" },
+      { "name": "Watermelon", "category": "Produce" },
+      { "name": "Iced Tea", "category": "Beverages" },
+      { "name": "Sweet Corn", "category": "Produce" },
+      { "name": "Ice Cream", "category": "Dairy" }
+    ],
+    "8": [{ "name": "Apples", "category": "Produce" }, { "name": "Pumpkin Spice Coffee", "category": "Beverages" }],
+    "9": [{ "name": "Sweet Potatoes", "category": "Produce" }, { "name": "Cinnamon Bread", "category": "Bakery" }],
+    "10": [{ "name": "Cranberries", "category": "Produce" }, { "name": "Hot Cocoa", "category": "Beverages" }],
+    "11": [{ "name": "Clementines", "category": "Produce" }, { "name": "Gingerbread Cookies", "category": "Snacks" }]
+  }
+}

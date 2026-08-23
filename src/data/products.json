@@ -1,0 +1,244 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "Organic Honeycrisp Apples",
+      "brand": "Organic Valley",
+      "price": 4.99,
+      "category": "Produce",
+      "tags": ["organic", "fresh"]
+    },
+    {
+      "id": "p2",
+      "name": "Fuji Apples",
+      "brand": "Fresh Harvest",
+      "price": 3.49,
+      "category": "Produce",
+      "tags": ["fresh"]
+    },
+    {
+      "id": "p3",
+      "name": "Organic Gala Apples",
+      "brand": "Earth Greens",
+      "price": 3.99,
+      "category": "Produce",
+      "tags": ["organic", "fresh"]
+    },
+    {
+      "id": "p4",
+      "name": "Granny Smith Green Apples",
+      "brand": "Fresh Harvest",
+      "price": 2.99,
+      "category": "Produce",
+      "tags": ["fresh"]
+    },
+    {
+      "id": "p5",
+      "name": "Colgate Total Toothpaste",
+      "brand": "Colgate",
+      "price": 3.99,
+      "category": "Household",
+      "tags": ["dental"]
+    },
+    {
+      "id": "p6",
+      "name": "Colgate Optic White Toothpaste",
+      "brand": "Colgate",
+      "price": 4.49,
+      "category": "Household",
+      "tags": ["dental", "whitening"]
+    },
+    {
+      "id": "p7",
+      "name": "Sensodyne Repair & Protect Toothpaste",
+      "brand": "Sensodyne",
+      "price": 6.49,
+      "category": "Household",
+      "tags": ["dental", "sensitive"]
+    },
+    {
+      "id": "p8",
+      "name": "Crest 3D White Toothpaste",
+      "brand": "Crest",
+      "price": 4.29,
+      "category": "Household",
+      "tags": ["dental"]
+    },
+    {
+      "id": "p9",
+      "name": "Tom's of Maine Natural Toothpaste",
+      "brand": "Tom's",
+      "price": 4.99,
+      "category": "Household",
+      "tags": ["organic", "natural", "dental"]
+    },
+    {
+      "id": "p10",
+      "name": "Organic Whole Milk",
+      "brand": "Horizon Organic",
+      "price": 4.79,
+      "category": "Dairy",
+      "tags": ["organic", "dairy"]
+    },
+    {
+      "id": "p11",
+      "name": "Silk Almond Milk Unsweetened",
+      "brand": "Silk",
+      "price": 3.69,
+      "category": "Beverages",
+      "tags": ["dairy-free", "vegan"]
+    },
+    {
+      "id": "p12",
+      "name": "Oatly Oat Milk Barista Edition",
+      "brand": "Oatly",
+      "price": 4.99,
+      "category": "Beverages",
+      "tags": ["dairy-free", "vegan"]
+    },
+    {
+      "id": "p13",
+      "name": "Chobani Greek Yogurt Plain",
+      "brand": "Chobani",
+      "price": 1.49,
+      "category": "Dairy",
+      "tags": ["protein", "high-protein"]
+    },
+    {
+      "id": "p14",
+      "name": "Chobani Vanilla Greek Yogurt",
+      "brand": "Chobani",
+      "price": 1.49,
+      "category": "Dairy",
+      "tags": ["protein"]
+    },
+    {
+      "id": "p15",
+      "name": "Kerrygold Irish Butter",
+      "brand": "Kerrygold",
+      "price": 4.29,
+      "category": "Dairy",
+      "tags": ["grass-fed"]
+    },
+    {
+      "id": "p16",
+      "name": "Organic Bananas",
+      "brand": "Dole",
+      "price": 1.99,
+      "category": "Produce",
+      "tags": ["organic", "fresh"]
+    },
+    {
+      "id": "p17",
+      "name": "Cavendish Yellow Bananas",
+      "brand": "Chiquita",
+      "price": 1.29,
+      "category": "Produce",
+      "tags": ["fresh"]
+    },
+    {
+      "id": "p18",
+      "name": "Pure Spring Water 24 Pack",
+      "brand": "Poland Spring",
+      "price": 5.99,
+      "category": "Beverages",
+      "tags": ["water"]
+    },
+    {
+      "id": "p19",
+      "name": "Sparkling Mineral Water 6 Pack",
+      "brand": "Perrier",
+      "price": 6.99,
+      "category": "Beverages",
+      "tags": ["sparkling"]
+    },
+    {
+      "id": "p20",
+      "name": "Whole Wheat Artisan Bread",
+      "brand": "Dave's Killer Bread",
+      "price": 5.49,
+      "category": "Bakery",
+      "tags": ["organic", "whole-grain"]
+    },
+    {
+      "id": "p21",
+      "name": "Classic White Bread",
+      "brand": "Wonder Bread",
+      "price": 2.79,
+      "category": "Bakery",
+      "tags": ["classic"]
+    },
+    {
+      "id": "p22",
+      "name": "Sourdough Bread Loaf",
+      "brand": "Boudin Bakery",
+      "price": 4.99,
+      "category": "Bakery",
+      "tags": ["fresh"]
+    },
+    {
+      "id": "p23",
+      "name": "Lay's Classic Potato Chips",
+      "brand": "Lay's",
+      "price": 3.99,
+      "category": "Snacks",
+      "tags": ["chips", "salty"]
+    },
+    {
+      "id": "p24",
+      "name": "Kettle Brand Organic Sea Salt Chips",
+      "brand": "Kettle Brand",
+      "price": 4.49,
+      "category": "Snacks",
+      "tags": ["organic", "chips"]
+    },
+    {
+      "id": "p25",
+      "name": "Dark Chocolate 70% Bar",
+      "brand": "Lindt",
+      "price": 3.49,
+      "category": "Snacks",
+      "tags": ["chocolate", "dark-chocolate"]
+    },
+    {
+      "id": "p26",
+      "name": "Tropicana 100% Orange Juice",
+      "brand": "Tropicana",
+      "price": 4.19,
+      "category": "Beverages",
+      "tags": ["juice", "vitamin-c"]
+    },
+    {
+      "id": "p27",
+      "name": "Organic Cold Brew Coffee",
+      "brand": "Chameleon",
+      "price": 4.99,
+      "category": "Beverages",
+      "tags": ["organic", "coffee"]
+    },
+    {
+      "id": "p28",
+      "name": "Starbucks Medium Roast Coffee",
+      "brand": "Starbucks",
+      "price": 8.99,
+      "category": "Beverages",
+      "tags": ["coffee"]
+    },
+    {
+      "id": "p29",
+      "name": "Dawn Ultra Liquid Dish Soap",
+      "brand": "Dawn",
+      "price": 3.29,
+      "category": "Household",
+      "tags": ["cleaning"]
+    },
+    {
+      "id": "p30",
+      "name": "Bounty Paper Towels 6 Roll",
+      "brand": "Bounty",
+      "price": 9.99,
+      "category": "Household",
+      "tags": ["paper-goods"]
+    }
+  ]
+}

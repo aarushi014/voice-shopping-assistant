@@ -1,0 +1,45 @@
+{
+  "substitutes": {
+    "milk": [
+      { "name": "Almond Milk", "category": "Beverages" },
+      { "name": "Oat Milk", "category": "Beverages" },
+      { "name": "Soy Milk", "category": "Beverages" }
+    ],
+    "whole milk": [
+      { "name": "Almond Milk", "category": "Beverages" },
+      { "name": "Oat Milk", "category": "Beverages" }
+    ],
+    "bread": [
+      { "name": "Whole Wheat Bread", "category": "Bakery" },
+      { "name": "Gluten-Free Bread", "category": "Bakery" },
+      { "name": "Sourdough Bread", "category": "Bakery" }
+    ],
+    "white bread": [
+      { "name": "Multigrain Bread", "category": "Bakery" },
+      { "name": "Sourdough Bread", "category": "Bakery" }
+    ],
+    "butter": [
+      { "name": "Olive Oil", "category": "Household" },
+      { "name": "Coconut Oil", "category": "Household" },
+      { "name": "Avocado Oil", "category": "Household" }
+    ],
+    "sugar": [
+      { "name": "Honey", "category": "Snacks" },
+      { "name": "Stevia", "category": "Snacks" },
+      { "name": "Maple Syrup", "category": "Snacks" }
+    ],
+    "coffee": [
+      { "name": "Green Tea", "category": "Beverages" },
+      { "name": "Matcha Tea", "category": "Beverages" },
+      { "name": "Decaf Coffee", "category": "Beverages" }
+    ],
+    "apples": [
+      { "name": "Pears", "category": "Produce" },
+      { "name": "Strawberries", "category": "Produce" }
+    ],
+    "water": [
+      { "name": "Sparkling Water", "category": "Beverages" },
+      { "name": "Coconut Water", "category": "Beverages" }
+    ]
+  }
+}
